@@ -1,9 +1,14 @@
+import '@/global.css'
+import { SafeAreaView as RNsafeAreaView} from "react-native-safe-area-context";
+import { styled } from "nativewind";
 import { Link } from "expo-router";
 import { Text, View } from "react-native";
 
+const SafeAreaView = styled(RNsafeAreaView);
+
 export default function Index() {
   return (
-    <View className="flex-1 items-center justify-center bg-background">
+    <SafeAreaView className="flex-1 p-5 bg-background">
       <Text className="text-3xl font-bold text-red-500">
         NativeWind v5
       </Text>
@@ -21,12 +26,12 @@ export default function Index() {
       </Link>
 
       <Link href={{
-        pathname: "/(tabs)/subscriptions/[id]",
+        pathname: "/subscriptions/[id]",
         params: { id: "Spotify" }
       }}>
         Go to spotify
       </Link>
 
-    </View>
+    </SafeAreaView>
   );
 }
