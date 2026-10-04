@@ -37,12 +37,13 @@
     --spacing-24: 96px;
     --spacing-30: 120px;
 
-    --font-sans: sans-regular;
-    --font-sans-light: sans-light;
-    --font-sans-medium: sans-medium;
-    --font-sans-semibold: sans-semibold;
-    --font-sans-bold: sans-bold;
-    --font-sans-extrabold: sans-extrabold;
+
+--font-sans: Sans-Regular;
+--font-sans-light: Sans-Light;
+--font-sans-medium: Sans-Medium;
+--font-sans-semibold: Sans-SemiBold;
+--font-sans-bold: Sans-Bold;
+--font-sans-extrabold: Sans-Extrabold;
 }
 
 @layer components {
@@ -75,11 +76,11 @@
     }
 
     .home-user-name {
-        @apply ml-4 text-2xl font-sans-bold text-primary;
+        @apply ml-4 text-xl font-sans-bold text-primary;
     }
 
     .home-add-icon {
-        @apply size-12;
+        @apply size-8;
     }
 
     .home-balance-card {

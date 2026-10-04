@@ -41,6 +41,22 @@ export const UPCOMING_SUBSCRIPTIONS: UpcomingSubscription[] = [
         currency: "USD",
         daysLeft: 6,
     },
+    {
+        id: "leurs",
+        icon: icons.figma,
+        name: "Figma",
+        price: 15.0,
+        currency: "USD",
+        daysLeft: 6,
+    },
+    {
+        id: "aura",
+        icon: icons.figma,
+        name: "Figma",
+        price: 15.0,
+        currency: "USD",
+        daysLeft: 6,
+    },
 ];
 
 export const HOME_SUBSCRIPTIONS: Subscription[] = [
