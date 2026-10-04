@@ -3,13 +3,9 @@ import { View, Image } from "react-native";
 import { clsx } from "clsx";
 import { tabs } from "@/constants/data";
 import { colors, components } from "@/constants/theme";
-import {useSafeAreaInsets} from "react-native-safe-area-context";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function TabLayout() {
-
-  const insets = useSafeAreaInsets();
-
-  const tabBar = components.tabBar;
 
   const TabIcon = ({ focused, icon }: TabIconProps) => (
     <View className="tabs-icon">
@@ -18,6 +14,9 @@ export default function TabLayout() {
       </View>
     </View>
   )
+
+  const insets = useSafeAreaInsets();
+  const tabBar = components.tabBar;
 
   return (
     <Tabs
@@ -35,29 +34,32 @@ export default function TabLayout() {
           elevation: 0,
         },
         tabBarItemStyle: {
-          paddingVertical: tabBar.height/2 - tabBar.iconFrame/1.6,
+          paddingVertical: tabBar.height / 2 - tabBar.iconFrame / 1.6,
         },
         tabBarIconStyle: {
           width: tabBar.iconFrame,
           height: tabBar.iconFrame,
           alignItems: "center",
         },
-          
+
       }}>
 
-      {tabs.map((tab) => (
-        <Tabs.Screen
-          key={tab.name}
-          name={tab.name}
-          options={{
-            title: tab.title,
-            tabBarIcon: ({ focused }) => {
-              return <TabIcon focused={focused} icon={tab.icon} />
-            }
-          }} />
-      ))}
 
-    </Tabs>
+      {
+        tabs.map((tab) => (
+          <Tabs.Screen
+            key={tab.name}
+            name={tab.name}
+            options={{
+              title: tab.title,
+              tabBarIcon: ({ focused }) => {
+                return <TabIcon focused={focused} icon={tab.icon} />
+              }
+            }} />
+        ))
+      }
+
+    </Tabs >
 
   );
 }
